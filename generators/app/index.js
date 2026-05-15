@@ -1,7 +1,6 @@
-"use strict";
-const Generator = require("yeoman-generator");
+import Generator from "yeoman-generator";
 
-module.exports = class extends Generator {
+export default class extends Generator {
   writing() {
     this.fs.copyTpl(
       this.templatePath("dummyfile.txt"),
@@ -9,4 +8,4 @@ module.exports = class extends Generator {
       { a: "b" },
     );
   }
-};
+}

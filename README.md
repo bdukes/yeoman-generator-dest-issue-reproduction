@@ -1,36 +1,3 @@
-# generator-yg [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> test
+# Minimal Issue Reproduction
 
-## Installation
-
-First, install [Yeoman](http://yeoman.io) and generator-yg using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
-
-```bash
-npm install -g yo
-npm install -g generator-yg
-```
-
-Then generate your new project:
-
-```bash
-yo yg
-```
-
-## Getting To Know Yeoman
-
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
-
-## License
-
-Apache-2.0 © [Brian Dukes](test)
-
-
-[npm-image]: https://badge.fury.io/js/generator-yg.svg
-[npm-url]: https://npmjs.org/package/generator-yg
-[travis-image]: https://travis-ci.com/bdukes/generator-yg.svg?branch=master
-[travis-url]: https://travis-ci.com/bdukes/generator-yg
-[daviddm-image]: https://david-dm.org/bdukes/generator-yg.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/bdukes/generator-yg
+Starting in yeoman-generator 8.0.0, supplying `globOptions` to a call to `copy` causes the destination path to include an extra directory. This example generator attempts to copy a file named `source.txt` to `dest.txt`, but it ends up writing it to the path `dest.txt/source.txt` (i.e. the destination path is always interpreted as a directory, instead of a file name).
